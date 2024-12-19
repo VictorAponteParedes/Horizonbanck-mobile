@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#f7f7f7',
     padding: 20,
     width: '100%',
-    height: height * 0.7,
+    height: height * 0.8,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
     shadowColor: '#ccc',
@@ -66,6 +66,19 @@ const styles = StyleSheet.create({
     fontSize: 14,
     textAlign: 'center',
     fontWeight: '600',
+  },
+
+  containerInitSession: {
+    alignItems: 'center', // Centra el contenido horizontalmente
+    justifyContent: 'center', // Centra el contenido verticalmente
+    marginTop: 50, // Espacio superior
+  },
+  textInitSession: {
+    fontSize: 13, // Tamaño de la fuente
+    fontWeight: 'bold', // Negrita
+    color: '#0066CC', // Color similar a un enlace
+    textAlign: 'center', // Centra el texto
+    textDecorationLine: 'underline', // Subraya el texto para simular un enlace
   },
 });
 

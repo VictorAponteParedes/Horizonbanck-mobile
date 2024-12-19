@@ -64,34 +64,38 @@ const UserFormScreen = () => {
             placeholderText="Contasena"
             placeholderColor="#9d9796"
           />
-          {/* Submit Button */}
+
           <TouchableOpacity
             style={styles.bottonSubmit}
             onPress={handleSubmit(onSubmit)}>
             <Text style={styles.bottomTextSubmit}>Enviar</Text>
           </TouchableOpacity>
 
+          <View style={styles.containerInitSession}>
+            <TouchableOpacity
+              onPress={() => console.log('Navegando a iniciar sesión')}>
+              <Text style={styles.textInitSession}>Iniciar Sesión</Text>
+            </TouchableOpacity>
+          </View>
+
           <View
             style={{
               flex: 1,
               justifyContent: 'center',
-              alignItems: 'center', // Centra los elementos en el eje vertical
               top: 30,
             }}>
             <TouchableOpacity style={styles.IconLogins}>
               <Image
                 source={facebookLoginImagen}
-                style={{width: 30, height: 30, marginRight: 10}}
+                style={{width: 30, height: 30}}
               />
-              <Text style={styles.IconTextLogins}>Regístrate con Facebook</Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.IconLogins}>
               <Image
                 source={googleLoginImagen}
-                style={{width: 30, height: 30, marginRight: 10}}
+                style={{width: 30, height: 30}}
               />
-              <Text style={styles.IconTextLogins}>Regístrate con Google</Text>
             </TouchableOpacity>
           </View>
         </ScrollView>
