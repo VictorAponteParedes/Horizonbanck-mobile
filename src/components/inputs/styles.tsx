@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {colors} from '../../assets/theme';
 
 const styles = StyleSheet.create({
   input: {
@@ -9,7 +10,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     backgroundColor: '#fff',
     fontSize: 16,
-    borderColor: 'black',
+    borderColor: colors.black,
     borderWidth: 0.2,
   },
 });
