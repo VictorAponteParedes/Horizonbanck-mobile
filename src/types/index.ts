@@ -22,3 +22,11 @@ export type UserData = {
     password: string;
     tarjetas?: Tarjeta[];
 }
+
+export type InputCustomType = {
+    placeholderText: string;
+    placeholderColor?: string;
+    control: any;
+    name: string;
+    secureTextEntry?: boolean;
+  };

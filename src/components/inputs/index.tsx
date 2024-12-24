@@ -1,14 +1,7 @@
 import {StyleSheet, TextInput, View} from 'react-native';
 import {Controller} from 'react-hook-form';
 import styles from './styles';
-
-type InputCustomType = {
-  placeholderText: string;
-  placeholderColor?: string;
-  control: any;
-  name: string;
-  secureTextEntry?: boolean;
-};
+import {InputCustomType} from '../../types';
 
 const InputCustom = ({
   control,
