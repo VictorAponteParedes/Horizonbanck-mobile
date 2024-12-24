@@ -6,24 +6,15 @@
  */
 
 import React from 'react';
-import UserFormScreen from './src/screens/Register';
-import {
-  View,
-} from 'react-native';
-
-
-
+import {NavigationContainer} from '@react-navigation/native';
+import TabNavigation from './src/navigation/tabNavigation';
 
 function App(): React.JSX.Element {
-
   return (
-    <View style={{ flex: 1 }}>
-      <UserFormScreen />
-    </View>
-
+    <NavigationContainer>
+      <TabNavigation />
+    </NavigationContainer>
   );
 }
-
-
 
 export default App;
