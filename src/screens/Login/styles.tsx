@@ -3,7 +3,7 @@ import {colors} from '../../assets/theme';
 
 const styles = StyleSheet.create({
   buttomContainerLogin: {
-    backgroundColor: colors.greenLith,
+    backgroundColor: colors.greenPrimary[300],
     paddingVertical: 12,
     borderRadius: 5,
     top: 10,
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   textRegister: {
-    color: colors.greenLith,
+    color: colors.greenPrimary[500],
     textAlign: 'center',
     fontSize: 14,
     fontWeight: '600',

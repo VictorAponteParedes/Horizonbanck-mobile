@@ -41,7 +41,7 @@ const LoginScreen = () => {
       <View
         style={{
           paddingVertical: 20,
-          backgroundColor: colors.greenLith,
+          backgroundColor: colors.greenPrimary[300],
           alignItems: 'center',
         }}>
         <LOGOHORIZONBANK width={320} height={160} />
