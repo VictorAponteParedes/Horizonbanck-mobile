@@ -12,7 +12,7 @@ const Tab = createBottomTabNavigator();
 
 function MyViewTabs() {
     return (
-        <Tab.Navigator>
+        <Tab.Navigator initialRouteName={Routes.HOME_SCREEN}>
             <Tab.Screen name={Routes.HOME_SCREEN} component={HomeScreen} />
             <Tab.Screen name={Routes.PROFILE} component={ProfileScreen} />
             <Tab.Screen name={Routes.TRANSFER} component={TransferScreen} />

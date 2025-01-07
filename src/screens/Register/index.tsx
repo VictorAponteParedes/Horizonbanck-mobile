@@ -7,19 +7,19 @@ import {
   TouchableOpacity,
   Image,
 } from 'react-native';
-import {useForm} from 'react-hook-form';
-import {UserData} from '../../types';
+import { useForm } from 'react-hook-form';
+import { UserData } from '../../@types';
 import InputCustom from '../../components/inputs/index';
 import AuthService from '../../services/auth';
 import styles from './styles';
-import {googleLoginImagen, facebookLoginImagen} from '../../assets';
+import { googleLoginImagen, facebookLoginImagen } from '../../assets';
 
 const UserFormScreen = () => {
-  const {registerUser} = AuthService;
+  const { registerUser } = AuthService;
   const {
     control,
     handleSubmit,
-    formState: {errors},
+    formState: { errors },
   } = useForm<UserData>();
 
   const onSubmit = async (data: UserData) => {
@@ -87,14 +87,14 @@ const UserFormScreen = () => {
             <TouchableOpacity style={styles.IconLogins}>
               <Image
                 source={facebookLoginImagen}
-                style={{width: 30, height: 30}}
+                style={{ width: 30, height: 30 }}
               />
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.IconLogins}>
               <Image
                 source={googleLoginImagen}
-                style={{width: 30, height: 30}}
+                style={{ width: 30, height: 30 }}
               />
             </TouchableOpacity>
           </View>

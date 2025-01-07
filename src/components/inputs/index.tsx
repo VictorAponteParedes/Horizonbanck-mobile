@@ -1,7 +1,7 @@
-import {StyleSheet, TextInput, View} from 'react-native';
-import {Controller} from 'react-hook-form';
+import { StyleSheet, TextInput, View } from 'react-native';
+import { Controller } from 'react-hook-form';
 import styles from './styles';
-import {InputCustomType} from '../../types';
+import { InputCustomType } from '../../@types';
 
 const InputCustom = ({
   control,
@@ -14,7 +14,7 @@ const InputCustom = ({
     <Controller
       control={control}
       name={name}
-      render={({field}) => (
+      render={({ field }) => (
         <TextInput
           placeholder={placeholderText}
           placeholderTextColor={placeholderColor}

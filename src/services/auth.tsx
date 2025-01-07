@@ -1,5 +1,5 @@
 import { urlBase } from '../config';
-import { UserData } from '../types'
+import { UserData } from '../@types'
 
 
 
