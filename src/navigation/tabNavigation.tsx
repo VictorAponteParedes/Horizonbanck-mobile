@@ -12,7 +12,9 @@ const TabNavigation = () => {
   return (
     <Stack.Navigator initialRouteName={Routes.LOGIN_SCREEN}>
       <Stack.Screen name={Routes.LOGIN_SCREEN} component={LoginScreen} />
-      <Stack.Screen name={Routes.HOME_SCREEN} component={MyViewTabs} />
+      <Stack.Screen name={Routes.HOME_SCREEN} component={MyViewTabs} options={{
+        headerShown: false
+      }} />
       <Stack.Screen name={Routes.USER_RESGISTER} component={UserFormScreen} />
     </Stack.Navigator>
   );
