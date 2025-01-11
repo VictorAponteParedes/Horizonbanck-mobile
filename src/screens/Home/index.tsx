@@ -1,36 +1,41 @@
-import { View, Text, Image } from 'react-native';
-import { colors } from '../../assets/theme';
-import { dataActivity } from '../../data';
+import React from 'react';
+import {View, Text, Image, ScrollView, StyleSheet} from 'react-native';
+import styles from './styles';
+import {dataActivity} from '../../data';
 
 const HomeScreen = () => {
-
-
   return (
-    <View style={{ flex: 1 }}>
-      <View style={{ backgroundColor: '#d9d8df', paddingVertical: 30 }}>
-        <View
-          style={{
-            backgroundColor: colors.greenPrimary[300],
-            paddingVertical: 75,
-            marginHorizontal: 15,
-            borderRadius: 10,
-
-
-          }}>
-          <Text style={{ color: colors.white, fontSize: 16, fontWeight: '700' }}>
-            Tarjeta
-          </Text>
+    <View style={{flex: 1}}>
+      {/* Header Section */}
+      <View style={styles.headerContainer}>
+        <View style={styles.cardContainer}>
+          <Text style={styles.cardText}>Tarjeta</Text>
         </View>
       </View>
 
-
-      <View style={{ marginHorizontal: 15 }}>
-        <Text style={{ fontSize: 20 }}>Actividades recientes</Text>
-
-
-        <View>
-
-        </View>
+      {/* Recent Activities Section */}
+      <View style={styles.activitiesContainer}>
+        <Text style={styles.title}>Actividades recientes</Text>
+        <ScrollView contentContainerStyle={styles.scrollContentContainer}>
+          {dataActivity.map((item, index) => (
+            <View key={index} style={styles.activityItem}>
+              <Image
+                source={item.photoActivity}
+                style={styles.activityImage}
+                alt={`Imagen de ${item.nameActivity}`}
+              />
+              <View style={styles.activityInfo}>
+                <Text style={styles.amount}>{`$${item.mountActivity.toFixed(
+                  2,
+                )}`}</Text>
+                <Text style={styles.activityDescription}>
+                  {item.descriptionActivity}
+                </Text>
+                <Text style={styles.activityName}>{item.nameActivity}</Text>
+              </View>
+            </View>
+          ))}
+        </ScrollView>
       </View>
     </View>
   );
