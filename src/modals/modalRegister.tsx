@@ -8,25 +8,40 @@ import {
   Dimensions,
 } from 'react-native';
 import InputCustom from '../components/inputs';
-import {useForm} from 'react-hook-form';
-import {colors} from '../assets/theme';
+import { useForm } from 'react-hook-form';
+import { colors } from '../assets/theme';
 import LOGOHORIZONBANK from '../assets/svg/horizonBankLogo.svg';
+import AuthService from '../services/auth';
+import { UserData } from '../@types';
+import { Routes } from '../navigation/routes';
+import {
+  useNavigation,
+} from '@react-navigation/native';
+
 
 type ModalRegisterProps = {
   visible: boolean;
   onClose: () => void;
 };
 
-const ModalRegister = ({visible, onClose}: ModalRegisterProps) => {
+const ModalRegister = ({ visible, onClose }: ModalRegisterProps) => {
+  const navigation = useNavigation()
+  const { registerUser } = AuthService;
   const {
     control,
     handleSubmit,
-    formState: {errors},
+    formState: { errors },
   } = useForm();
 
-  const onSubmit = () => {
-    console.log('Registro con éxito');
-    onClose();
+  const onSubmit = async (data: UserData) => {
+    console.log("hola")
+    try {
+      await registerUser(data);
+      console.log('Formulario enviado:', data);
+      onClose()
+    } catch (error) {
+      console.log('Error al enviar los datos:', error);
+    }
   };
 
   return (
@@ -54,7 +69,7 @@ const ModalRegister = ({visible, onClose}: ModalRegisterProps) => {
           </View>
           <InputCustom
             control={control}
-            name="firstName"
+            name="name"
             placeholderText="Nombre"
             placeholderColor="#9d9796"
           />
@@ -63,6 +78,13 @@ const ModalRegister = ({visible, onClose}: ModalRegisterProps) => {
             control={control}
             name="lastName"
             placeholderText="Apellido"
+            placeholderColor="#9d9796"
+          />
+
+          <InputCustom
+            control={control}
+            name="identityCard"
+            placeholderText="Cedula de Identidad"
             placeholderColor="#9d9796"
           />
 
