@@ -1,26 +1,26 @@
 
-export type Tarjeta = {
+export type Card = {
     id: number;
-    cardNumber: string; // Número de la tarjeta
-    cardHolderName: string; // Nombre del titular (puedes optar por relacionar con User)
-    expirationDate: string; // Fecha de vencimiento (ej: MM/YY)
-    // Evita devolver el CVV por seguridad
-    cvv: string; // Código de seguridad
-    cardType: string; // Tipo de tarjeta (ej: Visa, MasterCard)
-    bankName: string; // Nombre del banco emisor
-    balance: number; // Balance actual de la tarjeta
+    cardNumber: string;
+    accountNumber: string;
+    cardHolderName: string;
+    expirationDate: string;
+    cvv: string;
     isActive: boolean;
+    user: UserData
 
 }
 
+
 export type UserData = {
-    firstName: string;
+    name: string;
     lastName: string;
-    isActive: boolean;
-    profileImage: string;
+    profileImage?: string;
     email: string;
+    identityCard: string;
     password: string;
-    tarjetas?: Tarjeta[];
+    isActive?: boolean;
+    cards?: Card[];
 }
 
 export type InputCustomType = {
@@ -29,4 +29,4 @@ export type InputCustomType = {
     control: any;
     name: string;
     secureTextEntry?: boolean;
-  };
+};
