@@ -2,17 +2,26 @@ import { useEffect, useState } from "react";
 import { View, Text, ActivityIndicator, FlatList, TouchableOpacity } from "react-native";
 import useGetCards from "../../../hooks/useGetCards";
 import styles from "./styles";
+import CustomLayout from "../../../components/modals/CustomLayout";
+import { netNetWorkError } from "../../../assets";
+import { colors } from "../../../assets/theme";
 
 const ListCards = () => {
     const { getUsersCards, loading, error } = useGetCards();
+    const [modalVisible, setModalVisible] = useState(false);
 
-    // Usamos un useEffect para hacer log de las tarjetas cuando están disponibles
+    const toggleModal = () => {
+        setModalVisible(!modalVisible);
+    };
+
+    // Usamos un useEffect para manejar el error y el estado de carga
     useEffect(() => {
-        if (!loading) {
-            console.log("todas las tarjetas:", getUsersCards);
+        if (loading || error) {
+            setModalVisible(true); // Mostrar el modal cuando hay error o carga
         }
-    }, [getUsersCards, loading]);
+    }, [loading, error]);
 
+    // Si hay carga, mostramos el modal de error
     if (loading) {
         return (
             <View style={styles.center}>
@@ -22,8 +31,24 @@ const ListCards = () => {
         );
     }
 
+    // Si hay error, mostramos el modal de error
     if (error) {
-        return <Text style={styles.errorText}>Error: {error}</Text>;
+        return (
+            <CustomLayout
+                title={"Error"}
+                colorTitle={colors.red[500]}
+                subTitle={"Lo sentimos, intente más tarde"}
+                colorSubTitle={colors.red[500]}
+                logo={netNetWorkError}
+                visible={modalVisible}
+                onClose={toggleModal}
+                onAccept={() => {
+                    setModalVisible(false);
+                }}
+                tintColor={colors.red[500]}
+                borderColor={colors.red[500]}
+            />
+        );
     }
 
     return (
@@ -37,7 +62,10 @@ const ListCards = () => {
                         <Text style={styles.cardTitle}>{item.cardHolderName}</Text>
                         <Text style={styles.cardNumber}>************ {item.cardNumber.slice(-4)}</Text>
                         <Text style={styles.expirationDate}>Válida hasta: {item.expirationDate}</Text>
-                        <TouchableOpacity style={styles.cardButton} onPress={() => alert(`Ver detalles de ${item.cardHolderName}`)}>
+                        <TouchableOpacity
+                            style={styles.cardButton}
+                            onPress={() => alert(`Ver detalles de ${item.cardHolderName}`)}
+                        >
                             <Text style={styles.cardButtonText}>Ver detalles</Text>
                         </TouchableOpacity>
                     </View>
@@ -46,7 +74,5 @@ const ListCards = () => {
         </View>
     );
 };
-
-
 
 export default ListCards;
