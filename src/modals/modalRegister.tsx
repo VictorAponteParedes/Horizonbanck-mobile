@@ -17,6 +17,7 @@ import { Routes } from '../navigation/routes';
 import {
   useNavigation,
 } from '@react-navigation/native';
+import { fontsPlayFairDisplay } from '../assets/fonts';
 
 
 type ModalRegisterProps = {
@@ -62,7 +63,7 @@ const ModalRegister = ({ visible, onClose }: ModalRegisterProps) => {
               style={{
                 textAlign: 'center',
                 fontSize: 16,
-                fontWeight: '600',
+                fontFamily: fontsPlayFairDisplay.regular,
               }}>
               Registrate y disfruta tu seguridad!
             </Text>
@@ -124,7 +125,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
   modalContent: {
-    height: '60%',
+    height: '70%',
     width: '100%',
     backgroundColor: '#fff',
     borderTopLeftRadius: 20,
@@ -141,7 +142,7 @@ const styles = StyleSheet.create({
     color: '#fff',
     textAlign: 'center',
     fontSize: 16,
-    fontWeight: 'bold',
+    fontFamily: fontsPlayFairDisplay.regular,
   },
   closeButton: {
     marginTop: 15,
@@ -151,7 +152,7 @@ const styles = StyleSheet.create({
   closeButtonText: {
     color: '#ff5252',
     fontSize: 16,
-    fontWeight: 'bold',
+    fontFamily: fontsPlayFairDisplay.regular,
   },
 });
 

@@ -1,6 +1,7 @@
 import { Image } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
+import { fontsPlayFairDisplay } from '../assets/fonts';
+import { colors } from '../assets/theme';
 // Views
 import HomeScreen from '../screens/Home';
 import ProfileScreen from '../screens/Profile';
@@ -24,14 +25,15 @@ function MyViewTabs() {
             initialRouteName={Routes.HOME_SCREEN}
             screenOptions={{
                 tabBarStyle: { backgroundColor: '#f8f9fa', height: 60 },
-                tabBarActiveTintColor: '#007BFF',
-                tabBarInactiveTintColor: '#6c757d',
+                tabBarActiveTintColor: colors.greenPrimary[500],
+                tabBarInactiveTintColor: '#f9c805',
             }}
         >
             <Tab.Screen
                 name={Routes.HOME_SCREEN}
                 component={HomeScreen}
                 options={{
+                    tabBarLabelStyle: { fontFamily: fontsPlayFairDisplay.regular },
                     tabBarLabel: "Inicio",
                     tabBarIcon: () => (
                         <Image source={logoHome} style={iconStyle} />
@@ -43,6 +45,7 @@ function MyViewTabs() {
                 name={Routes.TRANSFER}
                 component={TransferScreen}
                 options={{
+                    tabBarLabelStyle: { fontFamily: fontsPlayFairDisplay.regular },
                     tabBarLabel: "Movimientos",
                     tabBarIcon: () => (
                         <Image source={logoTranfer} style={iconStyle} />
@@ -53,6 +56,7 @@ function MyViewTabs() {
                 name={Routes.PROFILE}
                 component={ProfileScreen}
                 options={{
+                    tabBarLabelStyle: { fontFamily: fontsPlayFairDisplay.regular },
                     tabBarLabel: "Perfil",
                     tabBarIcon: () => (
                         <Image source={logoProfile} style={iconStyle} />
@@ -63,6 +67,7 @@ function MyViewTabs() {
                 name={Routes.LIST_CARDS}
                 component={ListCards}
                 options={{
+                    tabBarLabelStyle: { fontFamily: fontsPlayFairDisplay.regular },
                     tabBarLabel: "Acciones",
                     tabBarIcon: () => (
                         <Image source={logoAccion} style={iconStyle} />

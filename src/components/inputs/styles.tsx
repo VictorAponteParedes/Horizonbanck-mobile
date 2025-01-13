@@ -1,5 +1,6 @@
-import {StyleSheet} from 'react-native';
-import {colors} from '../../assets/theme';
+import { StyleSheet } from 'react-native';
+import { colors } from '../../assets/theme';
+import { fontsPlayFairDisplay } from '../../assets/fonts';
 
 const styles = StyleSheet.create({
   input: {
@@ -12,6 +13,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     borderColor: colors.black,
     borderWidth: 0.2,
+    fontFamily: fontsPlayFairDisplay.regular
   },
 });
 

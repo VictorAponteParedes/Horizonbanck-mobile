@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     color: colors.white,
     textAlign: 'center',
     fontSize: 16,
-    fontWeight: '600',
+    fontFamily: fontsPlayFairDisplay.regular,
   },
   textRegister: {
     color: colors.greenPrimary[500],
