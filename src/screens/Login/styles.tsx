@@ -1,5 +1,6 @@
-import {StyleSheet} from 'react-native';
-import {colors} from '../../assets/theme';
+import { StyleSheet } from 'react-native';
+import { colors } from '../../assets/theme';
+import { fontsPlayFairDisplay } from '../../assets/fonts';
 
 const styles = StyleSheet.create({
   buttomContainerLogin: {
@@ -33,7 +34,7 @@ const styles = StyleSheet.create({
     color: colors.greenPrimary[500],
     textAlign: 'center',
     fontSize: 14,
-    fontWeight: '600',
+    fontFamily: fontsPlayFairDisplay.regular,
   },
   containerRedes: {
     flex: 1,
