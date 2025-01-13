@@ -10,6 +10,7 @@ import logoHome from "./images/logoHome.png"
 import logoProfile from "./images/logoProfile.png"
 import logoTranfer from "./images/logoTranfer.png"
 import logoAccion from "./images/logoAcction.png"
+import netNetWorkError from "./images/logoNetworkError.png"
 
 export {
     facebookLogin,
@@ -22,6 +23,7 @@ export {
     logoProfile,
     logoTranfer,
     logoAccion,
-    svgLogoProfile
+    svgLogoProfile,
+    netNetWorkError
 
 };
