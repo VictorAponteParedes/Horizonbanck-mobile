@@ -1,15 +1,3 @@
-// type RootStackParamList = {
-//   LOGIN_SCREEN: string;
-//   HOME_SCREEN: string;
-//   USER_RESGISTER: string;
-//   BOTTOM_TABS: string;
-//   DRAWER: string;
-//   PROFILE: string;
-//   TRANSFER: string;
-
-
-// };
-
 
 export const Routes = {
   LOGIN_SCREEN: 'LoginScreen',
@@ -19,7 +7,8 @@ export const Routes = {
   DRAWER: 'Drawer',
   PROFILE: 'ProfileScreen',
   TRANSFER: 'TransferScreen',
-  LIST_CARDS: 'ListCards'
-
+  LIST_CARDS: 'ListCards',
+  CREATE_CARD: 'CreateCard',
+  RENDER_ACCTION: 'RenderAcction'
 
 }

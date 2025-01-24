@@ -6,108 +6,96 @@ import { colors } from '../assets/theme';
 import HomeScreen from '../screens/Home';
 import ProfileScreen from '../screens/Profile';
 import TransferScreen from '../screens/transfer';
-import ListCards from '../screens/Cards/ListCards';
+import ActionsStackNavigator from './ActionsStackNavigator';
 
 // Routes
-import { Routes } from './routes';
+import {Routes} from './routes';
 
 // Icons TabNavigation
-import { logoHome, logoTranfer, logoProfile, logoAccion } from '../assets';
+import {logoHome, logoTranfer, logoProfile, logoAccion} from '../assets';
 
 const Tab = createBottomTabNavigator();
 
 function MyViewTabs() {
-    return (
-        <Tab.Navigator
-            initialRouteName={Routes.HOME_SCREEN}
-            screenOptions={{
-                tabBarStyle: { backgroundColor: '#f8f9fa', height: 60 },
-                tabBarActiveTintColor: colors.greenPrimary[300],
-                tabBarInactiveTintColor: 'black',
-            }}
-        >
-            <Tab.Screen
-                name={Routes.HOME_SCREEN}
-                component={HomeScreen}
-                options={{
-                    tabBarLabel: ({ focused }) => (
-                        <Text style={[styles.label, focused && styles.labelFocused]}>
-                            Inicio
-                        </Text>
-                    ),
-                    tabBarIcon: ({ focused }) => (
-                        <Image
-                            source={logoHome}
-                            style={[
-                                styles.icon,
-                                focused && styles.iconFocused,
-                            ]}
-                        />
-                    ),
-                }}
+  return (
+    <Tab.Navigator
+      initialRouteName={Routes.HOME_SCREEN}
+      screenOptions={{
+        tabBarStyle: {backgroundColor: '#f8f9fa', height: 60},
+        tabBarActiveTintColor: colors.greenPrimary[300],
+        tabBarInactiveTintColor: 'black',
+      }}>
+      <Tab.Screen
+        name={Routes.HOME_SCREEN}
+        component={HomeScreen}
+        options={{
+          tabBarLabel: ({focused}) => (
+            <Text style={[styles.label, focused && styles.labelFocused]}>
+              Inicio
+            </Text>
+          ),
+          tabBarIcon: ({focused}) => (
+            <Image
+              source={logoHome}
+              style={[styles.icon, focused && styles.iconFocused]}
             />
-            <Tab.Screen
-                name={Routes.TRANSFER}
-                component={TransferScreen}
-                options={{
-                    tabBarLabel: ({ focused }) => (
-                        <Text style={[styles.label, focused && styles.labelFocused]}>
-                            Movimientos
-                        </Text>
-                    ),
-                    tabBarIcon: ({ focused }) => (
-                        <Image
-                            source={logoTranfer}
-                            style={[
-                                styles.icon,
-                                focused && styles.iconFocused,
-                            ]}
-                        />
-                    ),
-                }}
+          ),
+        }}
+      />
+      <Tab.Screen
+        name={Routes.TRANSFER}
+        component={TransferScreen}
+        options={{
+          tabBarLabel: ({focused}) => (
+            <Text style={[styles.label, focused && styles.labelFocused]}>
+              Movimientos
+            </Text>
+          ),
+          tabBarIcon: ({focused}) => (
+            <Image
+              source={logoTranfer}
+              style={[styles.icon, focused && styles.iconFocused]}
             />
-            <Tab.Screen
-                name={Routes.PROFILE}
-                component={ProfileScreen}
-                options={{
-                    tabBarLabel: ({ focused }) => (
-                        <Text style={[styles.label, focused && styles.labelFocused]}>
-                            Perfil
-                        </Text>
-                    ),
-                    tabBarIcon: ({ focused }) => (
-                        <Image
-                            source={logoProfile}
-                            style={[
-                                styles.icon,
-                                focused && styles.iconFocused,
-                            ]}
-                        />
-                    ),
-                }}
+          ),
+        }}
+      />
+      <Tab.Screen
+        name={Routes.PROFILE}
+        component={ProfileScreen}
+        options={{
+          tabBarLabel: ({focused}) => (
+            <Text style={[styles.label, focused && styles.labelFocused]}>
+              Perfil
+            </Text>
+          ),
+          tabBarIcon: ({focused}) => (
+            <Image
+              source={logoProfile}
+              style={[styles.icon, focused && styles.iconFocused]}
             />
-            <Tab.Screen
-                name={Routes.LIST_CARDS}
-                component={ListCards}
-                options={{
-                    tabBarLabel: ({ focused }) => (
-                        <Text style={[styles.label, focused && styles.labelFocused]}>
-                            Acciones
-                        </Text>
-                    ),
-                    tabBarIcon: ({ focused }) => (
-                        <Image
-                            source={logoAccion}
-                            style={[
-                                styles.icon,
-                                focused && styles.iconFocused,
-                            ]}
-                        />
-                    ),
-                }}
+          ),
+        }}
+      />
+      <Tab.Screen
+        name={Routes.RENDER_ACCTION}
+        component={ActionsStackNavigator}
+        options={{
+          headerShown: false,
+          tabBarLabel: ({focused}) => (
+            <Text style={[styles.label, focused && styles.labelFocused]}>
+              Acciones
+            </Text>
+          ),
+          tabBarIcon: ({focused}) => (
+            <Image
+              source={logoAccion}
+              style={[styles.icon, focused && styles.iconFocused]}
             />
-        </Tab.Navigator>
-    );
+          ),
+        }}
+      />
+    </Tab.Navigator>
+  );
 }
 
 const styles = StyleSheet.create({
