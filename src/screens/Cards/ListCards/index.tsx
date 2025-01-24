@@ -14,24 +14,21 @@ const ListCards = () => {
         setModalVisible(!modalVisible);
     };
 
-    // Usamos un useEffect para manejar el error y el estado de carga
     useEffect(() => {
-        if (loading || error) {
-            setModalVisible(true); // Mostrar el modal cuando hay error o carga
-        }
+      if (loading || error) {
+        setModalVisible(true);
+      }
     }, [loading, error]);
 
-    // Si hay carga, mostramos el modal de error
     if (loading) {
-        return (
-            <View style={styles.center}>
-                <ActivityIndicator size="large" color="#0000ff" />
-                <Text style={styles.loadingText}>Cargando tarjetas...</Text>
-            </View>
-        );
+      return (
+        <View style={styles.center}>
+          <ActivityIndicator size="large" color="#0000ff" />
+          <Text style={styles.loadingText}>Cargando tarjetas...</Text>
+        </View>
+      );
     }
 
-    // Si hay error, mostramos el modal de error
     if (error) {
         return (
             <CustomLayout
