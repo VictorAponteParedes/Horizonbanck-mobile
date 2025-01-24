@@ -6,7 +6,7 @@ const useGetCards = () => {
     const { getAllCards } = CardService;
     const [getUsersCards, setGetUsersCards] = useState<Card[]>([]);
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const [error, setError] = useState<string | null>(null);
 
     const fetchData = async () => {
         try {
